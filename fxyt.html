@@ -1216,7 +1216,7 @@
           <td>
             Pop two values from the data stack.  Then use the value
             popped first to divide the value popped second, discard
-            fractional part from the result, and push the integer
+            fractional part from the result and push the integer
             result to the data stack.
           </td>
         </tr>
@@ -1225,7 +1225,7 @@
           <td>
             Pop two values from the data stack.  Then use the value
             popped first to divide the value popped second, obtain a
-            nonnegative remainder, and push the remainder to the data
+            nonnegative remainder and push the remainder to the data
             stack.
           </td>
         </tr>
@@ -1263,7 +1263,7 @@
           <td><code>^</code></td>
           <td>
             Pop two values from the data stack, perform bitwise XOR
-            operation on the values, and push the result to the data
+            operation on the values and push the result to the data
             stack.
           </td>
         </tr>
@@ -1271,7 +1271,7 @@
           <td><code>&</code></td>
           <td>
             Pop two values from the data stack, perform bitwise AND
-            operation on the values, and push the result to the data
+            operation on the values and push the result to the data
             stack.
           </td>
         </tr>
@@ -1279,17 +1279,16 @@
           <td><code>|</code></td>
           <td>
             Pop two values from the data stack, perform bitwise OR
-            operation on the values, and push the result to the data
+            operation on the values and push the result to the data
             stack.
           </td>
         </tr>
         <tr>
           <td><code>C</code></td>
           <td>
-            Clip the value at the top of the data stack between 0 and
-            255, i.e., if the value is less than 0, change the value
-            to 0, and similarly, if the value is greater than 255,
-            change the value to 255.
+            Clip the value at the top of the data stack to the range
+            0-255, i.e. set it to 0 if it is less than 0 and to 255 if
+            it is greater than 255.
           </td>
         </tr>
         <tr>

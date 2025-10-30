@@ -37,7 +37,7 @@ This project is intentionally minimal in nature.  It is intended to be
 a creative code golfing playground that offers the challenge of
 crafting interesting visuals with a limited set of commands.
 
-FXYT stands for *function of x, y, and t* and it may be pronounced
+FXYT stands for *function of x, y and t* and it may be pronounced
 /fɒksɪt/ ("foxit").
 
 [IMG1]: https://susam.github.io/blob/img/fxyt/fxyt-0.1.0-xor.png
@@ -108,10 +108,10 @@ canvas has the coordinate (255, 255).
 The command `X` pushes the x-coordinate value of the current cell to
 the data stack.  When the above piece of code is evaluated for each
 cell in the canvas, we get the result 0 for all cells at x = 0, the
-result 1 for all cells at x = 1, and so on up to the final column
-where the result is 255 for all cells at x = 255.  The result obtained
-for each cell determines the colour of each cell.  In particular, in
-this example, the result obtained for each cell determines the blue
+result 1 for all cells at x = 1 and so on up to the final column where
+the result is 255 for all cells at x = 255.  The result obtained for
+each cell determines the colour of each cell.  In particular, in this
+example, the result obtained for each cell determines the blue
 component of the colour of each cell.  As a result, all cells at x = 0
 appear black and all cells at x = 255 appear bright blue.
 
@@ -153,7 +153,7 @@ represents the current iteration.
 
 The command `T` pushes the t-value of the current iteration to the
 stack.  When the above piece of code is evaluated, we get the result 0
-for all cells at t = 0, the result 1 for all cells at t = 1, and so on
+for all cells at t = 0, the result 1 for all cells at t = 1 and so on
 up to the final iteration when the result is 255 for all cells at t
 = 255.  As a result, the colour of all the cells change from dark to
 bright blue gradually with each iteration.
@@ -172,7 +172,7 @@ of stack.  Such examples will be written using an array notation where
 the elements that appear on the left are at the bottom of the stack
 and the elements on the right are at the top of the stack.  For
 example, a stack that contains (from bottom to top) the values 10, 20,
-30, and 40 will be written as [10, 20, 30, 40].  If we push 50 to this
+30 and 40 will be written as [10, 20, 30, 40].  If we push 50 to this
 stack, we will write the resulting stack as [10, 20, 30, 40, 50].
 
 
@@ -200,11 +200,11 @@ code.  If the input code is time-dependent, then it is evaluated for
 each cell at (x, y, t).
 
 At the end of evaluation of the code for each cell, the top 3 values
-of the data stack is inspected to determine the red, blue, and green
+of the data stack is inspected to determine the red, blue and green
 (RGB) components of the colour of the cell.  The value at the top of
 the data stack is used as the blue component, the second value from
-the top is the green component, and the third value from the top is
-the red component.
+the top is the green component and the third value from the top is the
+red component.
 
 Suppose the data stack looks like the following after the evaluation of the
 input code for a certain cell: [10, 20, 30, 40, 50].  Then the colour
@@ -271,8 +271,8 @@ displayed in the status panel and the entire canvas is painted red.
 Integers
 --------
 
-The commands `X`, `Y`, and `T` push integer values to the data stack
-that correspond to the x, y, and t coordinates, respectively, of the
+The commands `X`, `Y` and `T` push integer values to the data stack
+that correspond to the x, y and t coordinates, respectively, of the
 current cell.  It is also possible to place arbitrary integers on the
 stack by using `N` along with the digit commands introduced in this
 section.
@@ -294,7 +294,7 @@ For example, consider the following code:
 N125
 ```
 
-There are 4 distinct commands in this code: `N`, `1`, `2`, and `5`.
+There are 4 distinct commands in this code: `N`, `1`, `2` and `5`.
 The evaluation of these commands occur as follows:
 
  1. `N` pushes the value 0 to the data stack.
@@ -311,7 +311,7 @@ stack is 125.
 
 The command sequence consisting of `N` followed by some digits is an
 idiom for composing an integer on the data stack.  For example, the
-following code places the three integers 147, 112, and 219 to the
+following code places the three integers 147, 112 and 219 to the
 stack.
 
 ```
@@ -326,10 +326,9 @@ and each cell of the canvas gets painted with the RGB colour (147,
 Arithmetic
 ----------
 
-The commands `+`, `-`, `*`, `/`, and `%` perform arithmetic
-operations.  Each command pops two values from the data stack,
-performs the arithmetic operation, and pushes the result back to the
-data stack.
+The commands `+`, `-`, `*`, `/` and `%` perform arithmetic operations.
+Each command pops two values from the data stack, performs the
+arithmetic operation and pushes the result back to the data stack.
 
 For example, the following code leaves the result 120 on the data
 stack.
@@ -343,8 +342,8 @@ Then the command sequence `N50` puts another integer 50 on the data
 stack.  Finally, the command `+` replaces both integers with their
 sum.
 
-The commands `+`, `-`, `*`, `/`, and `%` perform the addition,
-subtraction, multiplication, division, and modulus operations,
+The commands `+`, `-`, `*`, `/` and `%` perform the addition,
+subtraction, multiplication, division and modulus operations,
 respectively.  These commands are explained with the following
 examples:
 
@@ -433,8 +432,8 @@ where division by zero error occurred.
 Comparison
 ----------
 
-The commands `=`, `<`, and `>` perform comparison operations.  Each
-command pops two values from the data stack, compares them, and pushes
+The commands `=`, `<` and `>` perform comparison operations.  Each
+command pops two values from the data stack, compares them and pushes
 the result of the comparison back to the data stack.  The result of
 each comparison command is explained in table below:
 
@@ -485,9 +484,9 @@ XY=!N255*
 Bitwise Operations
 ------------------
 
-The commands `^`, `&`, and `|` perform bitwise operations on integer
+The commands `^`, `&` and `|` perform bitwise operations on integer
 values.  Each command pops two values from the data stack, performs
-bitwise operations on them, and pushes the result back to the data
+bitwise operations on them and pushes the result back to the data
 stack.  The result of each command is explained in the table below:
 
 | Example | Result          |
@@ -573,9 +572,9 @@ Rotate
 The command `R` rotates the three values at the top of the data stack
 such that the third value from the top of the data stack moves to the
 top, the value at the top of the data stack moves to the second place
-from the top, and the second value from the top of the data stack
-moves to the third place from the top.  For example, consider the
-following code:
+from the top and the second value from the top of the data stack moves
+to the third place from the top.  For example, consider the following
+code:
 
 ```
 N1N2N3N4N5R
@@ -619,7 +618,7 @@ to this place of the data stack where 0 has been pushed as the
 *initial place*.  The remainder of the code will increment the value
 in this initial place.  The command sequence `N5` places the integer 5
 on the stack.  Then `[` pops off 5 from the data stack, uses it as the
-loop counter, and begins a loop.  Each iteration of the loop executes
+loop counter and begins a loop.  Each iteration of the loop executes
 `N10+` which adds the integer 10 to the value in the initial place.
 Each time `]` is encountered, the loop counter is decremented by 1 and
 if the loop counter is still 0, the evaluator jumps back to the
@@ -755,7 +754,7 @@ The following idioms may be useful while writing FXYT code:
   [Inversion](#inversion) for details.
 
 - To execute a block of code conditionally, push 1 on the data stack
-  if the block should be executed and 0 otherwise, and then write a
+  if the block should be executed and 0 otherwise and then write a
   loop with the code block in it.  For example, the code `YN10=[N255]`
   places the integer 255 on the data stack if the y-coordinate value
   equals 10.
@@ -809,7 +808,7 @@ fragment to the address of the current page.  Copy the URL with the
 encoded input code embedded in it from the address bar of the web
 browser in order to share it with others.  When the recipient of the
 URL opens it with their web browser, the implementation reads the code
-embedded in the URL, decodes it, and executes it.
+embedded in the URL, decodes it and executes it.
 
 
 FAQ
@@ -829,8 +828,8 @@ License
 -------
 
 This is free and open source software.  You can use, copy, modify,
-merge, publish, distribute, sublicense, and/or sell copies of it,
-under the terms of the MIT License.  See [LICENSE.md][L] for details.
+merge, publish, distribute, sublicense and/or sell copies of it, under
+the terms of the MIT License.  See [LICENSE.md][L] for details.
 
 This software is provided "AS IS", WITHOUT WARRANTY OF ANY KIND,
 express or implied. See [LICENSE.md][L] for details.
@@ -850,7 +849,7 @@ See Also
 --------
 
 See [Andromeda Invaders](https://github.com/susam/invaders), a
-1980s-arcade-style game written using HTML5, Canvas, and Web Audio.
+1980s-arcade-style game written using HTML5, Canvas and Web Audio.
 
 See [CFRS[]](https://github.com/susam/cfrs), an extremely minimal
 turtle graphics language with only 6 simple commands.
