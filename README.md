@@ -73,7 +73,7 @@ Contents
 * [Constraints](#constraints)
 * [Distributable Links](#distributable-links)
 * [FAQ](#faq)
-* [License](#license)
+* [Licence](#licence)
 * [Support](#support)
 * [See Also](#see-also)
 
@@ -259,7 +259,7 @@ evaluation of the empty code results in an empty stack thus leading to
 a black canvas too.
 
 The three values at the top of the data stack must be integers between
-0 and 255, inclusive, because they are interpreted as the red, blue,
+0 and 255, inclusive, because they are interpreted as the red, blue
 and green components of the resulting RGB colour.  If any value among
 these three values is negative, it is an error.  Similarly, if any of
 these values exceed 255, it is an error.
@@ -272,7 +272,7 @@ Integers
 --------
 
 The commands `X`, `Y` and `T` push integer values to the data stack
-that correspond to the x, y and t coordinates, respectively, of the
+that correspond to the x, y and t coordinates respectively of the
 current cell.  It is also possible to place arbitrary integers on the
 stack by using `N` along with the digit commands introduced in this
 section.
@@ -343,7 +343,7 @@ stack.  Finally, the command `+` replaces both integers with their
 sum.
 
 The commands `+`, `-`, `*`, `/` and `%` perform the addition,
-subtraction, multiplication, division and modulus operations,
+subtraction, multiplication, division and modulus operations
 respectively.  These commands are explained with the following
 examples:
 
@@ -824,15 +824,15 @@ FAQ
     of commands.
 
 
-License
+Licence
 -------
 
 This is free and open source software.  You can use, copy, modify,
-merge, publish, distribute, sublicense and/or sell copies of it, under
-the terms of the MIT License.  See [LICENSE.md][L] for details.
+merge, publish, distribute, sublicence and/or sell copies of it, under
+the terms of the MIT Licence.  See [LICENSE.md][L] for details.
 
 This software is provided "AS IS", WITHOUT WARRANTY OF ANY KIND,
-express or implied. See [LICENSE.md][L] for details.
+express or implied.  See [LICENSE.md][L] for details.
 
 [L]: LICENSE.md
 
