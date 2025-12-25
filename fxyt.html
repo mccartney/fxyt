@@ -361,7 +361,9 @@
         ctx.fillRect(0, 0, GRID_SIZE * SCALE, GRID_SIZE * SCALE)
         for (let x = 0; x < GRID_SIZE; ++x) {
           for (let y = 0; y < GRID_SIZE; ++y) {
-            const result = evaluate(codeText, x, y, t)
+            const evalX = Math.hypot((x - GRID_SIZE / 2), (y - GRID_SIZE / 2))
+            const evalY = (Math.atan2(y - GRID_SIZE / 2, x - GRID_SIZE / 2) + Math.PI) / 2 * (GRID_SIZE - 1) / Math.PI
+            const result = evaluate(codeText, Math.round(evalX), Math.round(evalY), t)
             if (result === null) {
               return
             }
